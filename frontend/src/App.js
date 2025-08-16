@@ -43,8 +43,8 @@ function App() {
     setLoading(true);
     try {
       const params = new URLSearchParams();
-      if (statusFilter) params.append('status', statusFilter);
-      if (typeFilter) params.append('spot_type', typeFilter);
+      if (statusFilter && statusFilter !== 'all') params.append('status', statusFilter);
+      if (typeFilter && typeFilter !== 'all') params.append('spot_type', typeFilter);
       if (searchQuery) params.append('search', searchQuery);
       
       const response = await axios.get(`${API_URL}/api/spots?${params}`);
