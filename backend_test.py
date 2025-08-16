@@ -231,11 +231,12 @@ def main():
         # Test 2: Get all spots (initially empty)
         tester.test_get_all_spots()
         
-        # Test 3: Create different types of parking spots
-        spot_a1 = tester.test_create_spot("A1", "regular", 5.0)
-        spot_a2 = tester.test_create_spot("A2", "handicap", 3.0)
-        spot_b1 = tester.test_create_spot("B1", "vip", 10.0)
-        spot_c1 = tester.test_create_spot("C1", "electric", 7.0)
+        # Test 3: Create different types of parking spots with unique numbers
+        timestamp = datetime.now().strftime("%H%M%S")
+        spot_a1 = tester.test_create_spot(f"A1-{timestamp}", "regular", 5.0)
+        spot_a2 = tester.test_create_spot(f"A2-{timestamp}", "handicap", 3.0)
+        spot_b1 = tester.test_create_spot(f"B1-{timestamp}", "vip", 10.0)
+        spot_c1 = tester.test_create_spot(f"C1-{timestamp}", "electric", 7.0)
         
         if not all([spot_a1, spot_a2, spot_b1, spot_c1]):
             print("❌ Failed to create all test spots")
