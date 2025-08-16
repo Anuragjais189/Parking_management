@@ -290,7 +290,7 @@ function App() {
                     <SelectValue placeholder="All Types" />
                   </SelectTrigger>
                   <SelectContent>
-                    <SelectItem value="">All Types</SelectItem>
+                    <SelectItem value="all">All Types</SelectItem>
                     <SelectItem value="regular">Regular</SelectItem>
                     <SelectItem value="handicap">Handicap</SelectItem>
                     <SelectItem value="vip">VIP</SelectItem>
