@@ -35,7 +35,8 @@ class ParkingAPITester:
                 print(f"✅ Passed - Status: {response.status_code}")
                 try:
                     response_data = response.json()
-                    if method == 'POST' and endpoint == 'api/spots' and 'id' in response_data:
+                    # Track created spots for cleanup
+                    if method == 'POST' and 'api/spots' in endpoint and 'checkin' not in endpoint and 'checkout' not in endpoint and 'id' in response_data:
                         self.created_spots.append(response_data['id'])
                     return True, response_data
                 except:
